@@ -19,9 +19,9 @@ class HomeDetailPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
       ),
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: context.canvasColor,
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
@@ -31,7 +31,7 @@ class HomeDetailPage extends StatelessWidget {
               onPressed: (){}, 
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(
-                  MyTheme.darkBluishColor,
+                  context.theme.buttonColor,
                 ),
                 shape: MaterialStateProperty.all(
                   const StadiumBorder(),
@@ -56,11 +56,11 @@ class HomeDetailPage extends StatelessWidget {
                 arcType: VxArcType.CONVEY,
                 edge: VxEdge.TOP,
                 child: Container(
-                  color: Colors.white,
+                  color: context.cardColor,
                   width: context.screenWidth,
                   child: Column(
                     children: [
-                      catalog.name.text.xl4.color(MyTheme.darkBluishColor).bold.make(),
+                      catalog.name.text.xl4.color(context.accentColor).bold.make(),
                       catalog.desc.text.caption(context).xl.make(),
                       10.heightBox,
                       "Dolor sea takimata ipsum sea eirmod aliquyam est. Eos ipsum voluptua eirmod elitr, no dolor dolor amet eirmod dolor labore dolores magna. Amet vero vero vero kasd, dolore sea sed sit invidunt nonumy est sit clita."
