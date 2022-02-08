@@ -3,6 +3,10 @@
 import 'package:flutter_catalog/models/catalog.dart';
 
 class CartModel {
+  static final cartModel = CartModel._internal();
+  CartModel._internal();
+  factory CartModel() => cartModel;
+
   // catalog model
   late CatalogModel _catalog;
 
@@ -24,14 +28,13 @@ class CartModel {
   num get totalPrice =>
       items.fold(0, (total, current) => total + current.price);
 
-  // Add item 
-  void add(Item item){
+  // Add item
+  void add(Item item) {
     _itemIds.add(item.id);
   }
 
-  //Remove item    
-  void remove(Item item){
+  //Remove item
+  void remove(Item item) {
     _itemIds.remove(item.id);
   }
-
 }

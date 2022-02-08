@@ -3,6 +3,11 @@ import 'dart:convert';
 // ignore_for_file: unnecessary_null_comparison
 
 class CatalogModel {
+  static final catModel = CatalogModel._internal();
+  CatalogModel._internal();
+  factory CatalogModel() => catModel;
+
+
   static List<Item> items = [];
 
   //Get item by ID
